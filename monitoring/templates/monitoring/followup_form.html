@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Remplir une fiche de suivie</h2>
+    <form action="{% url 'monitoring:submit' %}" method="post">
+        {% csrf_token %}
+        <fieldset>
+            {% if error_msg %}<p><strong>{{error_msg}}</p></strong>{% endif %}
+            <input type='text' id='activity_type' name='activity_type' />
+        </fieldset>
+        <input type='submit' value='Submit' />
+    </form>
+{% endblock %}

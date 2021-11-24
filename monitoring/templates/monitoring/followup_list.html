@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Liste des fiches de suivie</h2>
+    <ul>
+        {% for followUp in object_list %}
+            <a href="{% url 'monitoring:detail' followUp.id %}"><li>{{ followUp }}</li></a>
+        {% endfor %}
+    </ul>
+{% endblock %}
